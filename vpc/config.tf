@@ -1,4 +1,4 @@
-variable "create_vpc" {
+variable "create_new_vpc" {
   description = "true or false)"
   default     = false
 }
@@ -8,8 +8,13 @@ variable "region" {
 }
 
 variable "vpc_tags" {
-  default = "tags { Name = vpc_${var.region}_${var.cidr_block} }"
+  type = "map"
+
+  default = {
+    vpn = "yes"
+  }
 }
+
 
 variable "cidr_block" {
   description = "vpc cidr"
@@ -43,5 +48,8 @@ variable "public_subnets" {
 
 variable "private_subnets" {
   default = ["10.146.0.128/27","10.146.0.160/27"]
+}
+
+variable "vgw_id" {
 }
 
