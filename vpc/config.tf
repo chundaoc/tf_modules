@@ -7,6 +7,10 @@ variable "region" {
   default = "us-east-2"
 }
 
+variable "vpc_tags" {
+  default = "tags { Name = vpc_${var.region}_${var.cidr_block} }"
+}
+
 variable "cidr_block" {
   description = "vpc cidr"
   default = "10.146.0.0/24"
