@@ -10,7 +10,3 @@ variable "vpc_id" {
 variable "vgw_id" {
   description = "vgw id to be attached"
 }
-
-variable "route_table_id" {
-  description = "propagate routes to private route table"
-}
