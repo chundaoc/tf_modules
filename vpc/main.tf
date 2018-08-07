@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "${var.region}"
-}
-
 # VPC
 resource "aws_vpc" "vpc" {
   count = "${var.create_new_vpc ? 1 : 0}"

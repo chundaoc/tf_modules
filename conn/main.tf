@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "${var.region}"
-}
-
 resource "aws_vpn_connection" "conn" {
   vpn_gateway_id      = "${var.vgw_id}"
   customer_gateway_id = "${var.cgw_id}"
@@ -9,7 +5,7 @@ resource "aws_vpn_connection" "conn" {
   static_routes_only  = false
 
   tags {
-    Name = "conn_${var.region}"
+    Name = "conn_${var.vgw_id}_${var.cgw_id}"
   }
 }
 
