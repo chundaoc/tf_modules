@@ -49,7 +49,3 @@ variable "public_subnets" {
 variable "private_subnets" {
   default = ["10.146.0.128/27","10.146.0.160/27"]
 }
-
-variable "vgw_id" {
-}
-
