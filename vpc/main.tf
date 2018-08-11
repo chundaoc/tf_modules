@@ -53,7 +53,6 @@ resource "aws_route_table" "public" {
   count = "${var.create_new_vpc && length(var.public_subnets) > 0 ? 1 : 0}"
 
   vpc_id = "${aws_vpc.vpc.id}"
-  propagating_vgws = ["${var.vgw_id}"]
 
   tags {
     Name = "route_table_public"
@@ -75,7 +74,6 @@ resource "aws_route_table" "private" {
   count = "${var.create_new_vpc && length(var.private_subnets) > 0 ? 1 : 0}" 
 
   vpc_id = "${aws_vpc.vpc.id}"
-  propagating_vgws = ["${var.vgw_id}"]
 
   tags {
     Name = "route_table_private"
